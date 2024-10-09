@@ -1,0 +1,316 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fbe5c8;
+    background-image: url('images/paw.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #5a3825;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    position: relative;
+}
+
+.hamburger-label {
+    display: block;
+    cursor: pointer;
+    padding: 15px;
+    background-color: transparent;
+    border: none;
+    width: 30px;
+    margin-right: auto;
+}
+
+.hamburger-label div {
+    width: 30px;
+    height: 4px;
+    background-color: #5a3825;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.banner-text {
+    font-size: 2em;
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.furrfect {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 #000;
+    color: #5A3E2B;
+}
+
+.care {
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 #000;
+    color: #5A3E2B;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    margin-left: auto;
+}
+
+.hamburger {
+    display: none;
+}
+nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 40%;
+    max-width: 300px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    display: none; 
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease; 
+    max-height: 0; 
+    opacity: 0; 
+}
+
+nav.show {
+    display: block; 
+    max-height: 500px; 
+    opacity: 1; 
+}
+
+#hamburger-toggle:checked ~ nav {
+    display: block;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: auto 0;
+    padding: 0;
+    display: flex;
+    flex-direction:column;
+    gap: 20px;
+    width: 100%; 
+}
+
+.navbar li {
+    display: block;
+    width: 100%;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #5a3825;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    width: 100%;
+}
+
+.navbar a:hover {
+    background-color: #b59b7f;
+    color: white;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    width: 80%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box {
+    background-color: #b59b7f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="file"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #b59b7f;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #b18658;
+}
+
+.sub {
+    margin-top: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 28px;
+}
+.change-theme-btn {
+    background-color: #b59b7f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.change-theme-btn:hover{
+    background-color: #a0866c;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: #1a1a1a; 
+    color: #f5f5f5; 
+    background-image: url(images/nnpaw.jpeg);
+}
+body.dark-theme .container {
+    background: rgba(60, 60, 60, 0.4); 
+}
+body.dark-theme .navbar a {
+    color: #f5f5f5; 
+}
+body.dark-theme .navbar a:hover {
+    background-color: #454545;
+}
+body.dark-theme .navbar  {
+    background-color: #666; 
+}
+body.dark-theme .change-theme-btn,
+body.dark-theme .sub{
+    background-color: #444;
+    color: #f5f5f5; 
+}
+body.dark-theme .hamburger-label div {
+    background-color: #f5f5f5;
+}
+body.dark-theme .box {   
+    color: #ffffff; 
+    background-color: #333;
+}
+/* Light text for specific elements */
+body.dark-theme .furrfect,
+body.dark-theme .care, 
+body.dark-theme .nav-btn,
+.hamburger-label div,
+body.dark-theme .hamburger-label div {
+    color: #f5f5f5; 
+}
+/* Hover effects for buttons */
+body.dark-theme .change-theme-btn:hover, 
+body.dark-theme .sub:hover{
+    background-color: #13100d; 
+}
+/* Transition styles for smoother effects */
+body,
+nav,
+.container,
+.hamburger-label div,
+.change-theme-btn
+*{
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+        left: 0;
+        top: 50px;
+    }
+
+    .sub {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-text {
+        font-size: 1.5em;
+    }
+
+    .logo {
+        max-width: 80px;
+    }
+
+    .box {
+        font-size: 16px;
+    }
+}
