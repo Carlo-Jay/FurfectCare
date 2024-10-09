@@ -1,0 +1,457 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    background-image: url("images/paws.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; 
+    opacity: 0.5;
+    z-index: -1;
+    pointer-events: none;
+}
+
+header {
+    display: flex;
+    justify-content:center; 
+    align-items: center;
+    background-color: transparent;
+    padding: 10px 0px 10px 0;
+    position:fixed;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 900;
+    padding-left: 6.3%;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: background-color 0.5s ease;
+    transition: 0.5s ease-in-out;
+}
+
+.progress-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; /* adjust the height of the progress bar */
+    background-color: #f0f0f0; /* adjust the background color */
+    z-index: 1000; /* ensure the progress bar is on top */
+  }
+  
+  .progress-bar {
+    width: 0%; /* initial width of the progress bar */
+    height: 100%;
+    background-color: #ffbd6c; /* adjust the progress bar color */
+    transition: width 0.3s ease-out; /* smooth transition effect */
+  }
+
+.logo img{
+    max-width: 150px;
+    margin-top: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffbc6c;
+    text-decoration: none;
+    background-color: #0000008e;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+nav ul li a:hover {
+    color: #f0f0f0;
+    text-decoration: none;
+    background-color: #000000;
+    border-radius: 15px;
+    padding: 8px;
+    transition: 0.3s ease;
+}
+
+.hidden-list {
+    display: none;
+  }
+  
+  .hidden-list li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  
+  .hidden-list li a {
+    text-decoration: none;
+    color: #337ab7; 
+  }
+  
+  .hidden-list li a:hover {
+    color: #23527c; 
+  }
+
+  .clickable-list {
+    cursor: pointer; 
+  }
+  
+  .hidden-list {
+    display: none;
+  }
+  
+  .hidden-list li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  
+  .hidden-list li:before {
+    content: ""; 
+    display: inline-block;
+    width: 20px; 
+    height: 20px; 
+    margin-right: 10px; 
+  }
+  
+
+  .about-text2 .hidden-list:nth-child(2) li:nth-child(1):before {
+    content: ""; 
+  }
+  .about-text2 .hidden-list:nth-child(2) li:nth-child(2):before {
+    content: ""; 
+  }
+  
+  .about-text2 .hidden-list:nth-child(4) li:nth-child(1):before {
+    content: url('ig-icon.png'); 
+  }
+  
+  .about-text2 .hidden-list:nth-child(4) li:nth-child(2):before {
+    content: url('fb-icon.png'); 
+  }
+  
+  .about-text2 .hidden-list:nth-child(4) li:nth-child(3):before {
+    content: url('tiktok-icon.png'); 
+  }
+  
+  /* add styles for the third list */
+  .about-text2 .hidden-list:nth-child(6) li:nth-child(1):before {
+    content: ""; 
+  }
+  
+  .about-text2 .hidden-list:nth-child(6) li:nth-child(2):before {
+    content: ""; 
+  }
+
+.auth-buttons {
+    display: flex;
+    margin-right: 10%;
+}
+
+.auth-buttons .sign-in, 
+.auth-buttons .sign-up {
+    background-color: #f5f5f5;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    bottom: 0;
+}
+
+.container {
+    max-width: 1200px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 50px auto;
+    background-color: #ca8326;
+    padding: 20px;
+    border-radius: 35px;
+}
+
+.card {
+    flex: 1;
+    transition: all 350ms;
+    cursor: alias;
+    overflow: hidden;
+    background-color: #ffffff; 
+    border-radius: 25px;
+    width: auto;
+    height: auto;
+    color: transparent;
+}
+.card:hover {
+    flex: 3;
+    color: #000;
+    
+}
+
+.sign {
+    height: 40px;
+    width: 150px;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    color: #fff;
+    transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
+    margin: 5px;
+}
+
+.sign:hover {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 1px 1px 200px #252525;
+    border: none;
+}
+
+.pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    height: 1175px;
+    background-image: url("images/doggo.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.banner-text {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    text-align: center;
+    font-size: 8rem; 
+    font-weight: bold; 
+    font-family: Impact, sans-serif;
+    opacity: 65%;
+    letter-spacing: 4px;
+}
+
+.banner-text2 {
+    position: absolute; 
+    top: 63%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #ffbc6c; 
+    text-align: center;
+    font-size: 3rem; 
+    font-weight: bold; 
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+    letter-spacing: 3px;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    margin: 50px auto;
+    background-color:#ffbd6ce8; 
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    max-width: 1200px;
+}
+
+.about-text1 {
+    text-align: justify;
+    width: 700px; 
+    margin: 50px;
+    font-family: 'Georgia', serif; 
+    color: #333; 
+    font-weight: 400; 
+    line-height: 1.6; 
+}
+
+.about-text2 {
+    width: 300px;
+    height:auto;
+    margin: 25px;
+}
+
+.title-text {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    background-color: #5e4206f1;
+}
+
+.title-text h1 {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT';
+}
+
+.pp {
+    font-size: 1.25rem;
+    font-style: italic;
+    padding: 5% 5% 0 5%;
+    font-family: 'Gill Sans', 'Gill Sans MT';
+    text-align: justify;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacts {
+    text-align: center;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffbc6c;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    max-width: 800px;
+    color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT';
+}
+
+.contacts h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contacts p {
+    font-size: 1.5rem;
+}
+
+#rm {
+    background-image: url("images/recordmng.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#am {
+    background-image: url("images/appmng.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#dm {
+    background-image: url("images/ditmng.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#ppm {
+    background-image: url("images/profmng.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#wm {
+    background-image: url("images/wellmng.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.social-media img{
+    width: 50px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+    }
+
+    .auth-buttons a {
+        margin: 10px 0;
+    }
+
+    .banner-text {
+        font-size: 5rem;
+    }
+
+    .banner-text2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-width: 100px;
+    }
+
+    .banner-text {
+        font-size: 3rem;
+    }
+
+    .banner-text2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .about {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .about-text1, .about-text2 {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
