@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furrfect Care Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <a href="landingPage.html"><img src="images/Logoooo.png" alt="Furrfect Care Logo" class="logo"></a>
+        <h1 class="title"><span class="furrfect">Furfect</span> <span class="care">Care</span></h1>
+        <form id="login-form">
+            <div class="input-group">
+                <input type="text" id="login-username" name="username" placeholder=" " required>
+                <label for="login-username">Username:</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="login-password" name="password" placeholder=" " required>
+                <label for="login-password">Password:</label>
+            </div>
+            <div class="options">
+                <a href="Register.html" class="register">SIGN UP</a>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+            <button type="submit" class="login-btn">SIGN IN</button>
+        </form>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('login-form');
+            
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const username = document.getElementById('login-username').value.trim();
+                const password = document.getElementById('login-password').value;
+
+                let users = JSON.parse(localStorage.getItem('users')) || [];
+                const user = users.find(user => user.username === username && user.password === password);
+
+                if (user) {
+                    sessionStorage.setItem('loggedInUser', JSON.stringify(user));
+                    window.location.href = 'Home.html'; 
+                } else {
+                    alert('Invalid username or password.');
+                }
+            });
+
+            const loggedInUser = sessionStorage.getItem('loggedInUser');
+            if (loggedInUser) {
+                window.location.href = 'Home.html'; 
+            }
+        });
+    </script>
+</body>
+</html>

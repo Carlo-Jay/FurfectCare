@@ -1,0 +1,390 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fbe5c8;
+    background-image: url('images/paw.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #5a3825;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.hamburger-label {
+    display: block;
+    cursor: pointer;
+    padding: 15px;
+    background-color: transparent;
+    border: none;
+    width: 30px;
+    margin-right: 20px;
+}
+
+.hamburger-label div {
+    width: 30px;
+    height: 4px;
+    background-color: #5a3825;
+    margin: 5px 0;
+    transition: 4s;
+}
+
+.banner-text {
+    font-size: 2em;
+    font-weight: bold;
+    flex-grow: 0;
+    text-align: center;
+    margin: 0 auto;
+    
+}
+
+.furrfect {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 #000;
+    color: #5A3E2B;
+}
+
+.care {
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 #000;
+    color: #5A3E2B;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    margin-left: 20px; 
+}
+
+.hamburger {
+    display: none;
+}
+
+nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 40%;
+    max-width: 300px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    display: none; 
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease; 
+    max-height: 0; 
+    opacity: 0; 
+    
+}
+
+nav.show {
+    display: block; 
+    max-height: 500px; 
+    opacity: 1; 
+}
+
+#hamburger-toggle:checked ~ nav {
+    display: block;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: auto 0;
+    padding: 0;
+    display: flex;
+    flex-direction:column;
+    gap: 20px;
+    width: 100%; 
+}
+
+.navbar li {
+    display: block;
+    width: 100%;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #5a3825;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    width: 100%;
+}
+
+.navbar a:hover {
+    background-color: #b59b7f;
+    color: white;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.puppy-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ft {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+    align-self: auto;
+    margin-left: 8%;
+}
+
+.ft-btn {
+    background-color: #b59b7f;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ft-btn:hover {
+    background-color: #a0866c;
+}
+
+footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-btn {
+    color: #5a3825;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#hamburger-toggle {
+    display: none;
+}
+
+.update-btn {
+    background-color: #b59b7f;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    margin-right: 100px;
+    margin-top: 10px;
+}
+
+.update-btn:hover {
+    background-color: #a0866c;
+}
+
+.update-section {
+    font-size: 1.5em;
+    color: #5a3825;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f2d7b2;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    
+}
+
+.update-section.updated {
+    font-size: 2em;
+    color: #ffffff;
+    background-color: #a0866c;
+    transform: scale(1);
+    font-family: Arial, sans-serif;
+}
+
+.change-theme-btn {
+    background-color: #b59b7f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.change-theme-btn:hover{
+    background-color: #a0866c;
+}
+#remove{
+    margin-top: 20px;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: #1a1a1a; 
+    color: #f5f5f5; 
+    background-image: url(images/nnpaw.jpeg);
+}
+body.dark-theme .container {
+    background: rgba(60, 60, 60, 0.4); 
+}
+body.dark-theme .navbar a {
+    color: #f5f5f5; 
+}
+body.dark-theme .navbar a:hover {
+    background-color: #454545;
+}
+body.dark-theme .navbar  {
+    background-color: #666; 
+}
+body.dark-theme .hamburger-label div {
+    background-color: #f5f5f5;
+}
+body.dark-theme .change-theme-btn {
+    background-color: #545353;
+    color: #f5f5f5; 
+}
+body.dark-theme .update-section {   
+    color: #ffffff; 
+    background-color: #464444;
+}
+/* Darker button */
+/* Light button text */
+body.dark-theme .ft-btn,
+body.dark-theme .update-btn,
+body.dark-theme .change-theme-btn{
+    background-color: #545353;
+    color: #f5f5f5; 
+}
+/* Light text for specific elements */
+body.dark-theme .furrfect,
+body.dark-theme .care, 
+body.dark-theme .nav-btn,
+.hamburger-label div,
+body.dark-theme .hamburger-label div {
+    color: #f5f5f5; 
+}
+/* Hover effects for buttons */
+body.dark-theme .change-theme-btn:hover,
+body.dark-theme .ft-btn:hover,
+body.dark-theme .update-btn:hover {
+    background-color: #13100d; 
+}
+/* Transition styles for smoother effects */
+body,
+nav,
+.container,
+.hamburger-label div,
+.change-theme-btn,
+.update-section,
+body.dark-theme .update-section{
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+@media only screen and (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    .banner-text {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav {
+        width: 100%;
+        position: static;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ft {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .puppy-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .ft-btn {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-btn {
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+
+    .banner-text {
+        font-size: 1.8em;
+    }
+
+    .ft {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .ft-btn {
+        width: 100%;
+    }
+}
+
+#pet-image {
+    width: 500px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    object-fit: cover; /* Ensures the image fits within the specified size without distortion */
+    border-radius: 15px; /* Optional: keep border-radius for rounded corners */
+}

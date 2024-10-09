@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furfect Care</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <input type="checkbox" id="hamburger-toggle" class="hamburger">
+            <label for="hamburger-toggle" class="hamburger-label">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <h1 class="banner-text"><span class="furrfect">Furfect</span> <span class="care">Care</span></h1>
+            <button id="theme-toggle-btn" class="change-theme-btn">Change Theme</button>
+            <a href="Home.html"><img src="images/Logoooo.png" alt="Furfect Care Logo" class="logo"></a>
+            <nav id="navbar">
+                <ul class="navbar">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Add_Pet.html">Add Pet</a></li>
+                    <li><a href="Account.html">Account</a></li>
+                    <li><a href="#" id="logout-button">Log Out</a></li>
+                </ul>
+            </nav>
+        </header>        
+
+        <div class="content">
+            
+            <div id="content-update-section" class="update-section">
+                Welcome to Furfect Care!
+            </div>
+            <div id="pet-profile">
+                <img id="pet-image" src="images/pets.jpg" class="puppy-image" alt="Pet Image">
+                <h2 id="pet-name">Pet Name</h2>
+            </div>
+            <div class="ft">
+                <button class="ft-btn" data-page="record">Record Management</button>
+                <button class="ft-btn" data-page="appointment">Appointment Management</button>
+                <button class="ft-btn" data-page="dietary">Dietary Management</button>
+                <button class="ft-btn" data-page="profile">Pet Profile Management</button>
+                <button class="ft-btn" data-page="wellness">Wellness Management</button>
+            </div>
+            <div id="pet-details"></div>
+            <div>
+                <button class="ft-btn" id="remove">Remove Pet</button>
+            </div>
+        </div>
+
+        <footer>
+            <a href="#" class="nav-btn" id="prev-pet">PREVIOUS</a>
+            <button id="update-content-btn" class="update-btn">Update Content</button>
+            <a href="#" class="nav-btn" id="next-pet">NEXT</a>
+    </div>
+    <script src="js/home.js"></script>
+</body>
+</html>

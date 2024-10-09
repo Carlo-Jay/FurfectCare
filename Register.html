@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="register-container">
+        <form class="register-form">
+            <h2>SIGN UP</h2>
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Juan Dela Cruz">
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Juan">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="juandelacruz@gamil.com">
+
+            <label for="contact-number">Contact Number:</label>
+            <input type="tel" id="contact-number" name="contact-number" placeholder="0912 345 6789">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="**********">
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="*********">
+
+            <div class="email-updates">
+                <input type="checkbox" id="email-updates" name="email-updates">
+                <label for="email-updates">Get email updates</label>
+            </div>
+
+            <button type="submit">CONFIRM</button>
+            <p>By creating an account you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
+        </form>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const registerForm = document.querySelector('.register-form');
+
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const fullName = document.getElementById('full-name').value.trim();
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const contactNumber = document.getElementById('contact-number').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const emailUpdates = document.getElementById('email-updates').checked;
+
+            const phonePattern = /^09\d{2}\s?\d{3}\s?\d{4}$/;
+
+            // Validation
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long.');
+                return;
+            }
+
+            if (!fullName || !username || !email || !contactNumber || !password || !confirmPassword) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            if (!phonePattern.test(contactNumber)) {
+                alert('Please enter a valid contact number (format: 0912 345 6789).');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return;
+            }
+
+            const user = {
+                fullName,
+                username,
+                email,
+                contactNumber,
+                password,
+                emailUpdates
+            };
+
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push(user);
+            localStorage.setItem('users', JSON.stringify(users));
+
+            alert('Registration successful!');
+            window.location.href = 'Login.html';
+        });
+    });
+</script>
+</body>
+</html>
